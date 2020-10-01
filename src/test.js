@@ -8,28 +8,4 @@
 // Write a function that returns the elements on odd positions in a array.
 // Write three functions that compute the sum of the numbers in a array: using a for-loop, a while-loop and recursion.
 
-function rotateClock(array) {
-    let resultArray = new Array(array.length);
-    let k = 0;
-    for (let i = 0; i < array.length; i++) {
-        //resultArray[i] = new Array(array[i].length);
-        k = array.length -1;
-        for (let j = 0; j < array.length; j++) {
-            resultArray[j] = new Array(array[i].length);
-            resultArray[j][i] = array[k][j];
-            //console.table(resultArray);
-        }
-        k--;
-    }
-    return resultArray;
-}
 
-
-let array = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-
-console.table(array);
-console.table(rotateClock(array));
