@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--Modify the previous program such that
+only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17-->
+<html>
+    <title>
+        Sum of n numbers
+    </title>
+    <body>
+        <script>
+            function sumOfMul(num) {                                // Calculate Sum of multiples of 3 & 5.
+                let sum = 0;
+                let i = 1;
+                while (i <= num){
+                    if ( i % 3 == 0 || i % 5 == 0 ){
+                        sum += i;
+                    }
+                    i++;
+                }
+                return sum;
+            }
+            let num = prompt("Enter the number upto which you want the sum ", "");
+            let sum = sumOfMul(num);
+            alert(`Sum of 1st , ${num} Numbers is :  , ${sum}  !!`);
+        </script>
+    </body>
+</html>

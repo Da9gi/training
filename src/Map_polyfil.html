@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--Polyfil of inbuilt map() method of array in javascript-->
+
+<html>
+<head>
+    <title>polyfil of map method of array</title>
+</head>
+<body>
+    <script>
+        function newMap(callback, array) {
+            let arr1 = [];
+
+            for (let i = 0; i < array.length; i++) {
+                arr1[i] = callback(array[i]);
+            }
+
+            return arr1;
+        }
+
+//Below is an example of callback function passed to newMap()
+
+        function mulByTen(element) {
+            return element * 10;
+        }
+
+        let array = [23, 41, 34, 97, 57, 6, 4, 2, 9, 73];
+        let final_array = newMap(mulByTen, array);
+
+        document.write(final_array);
+    </script>
+</body>
+</html>

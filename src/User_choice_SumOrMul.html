@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--Write a program that asks the user for a number n and gives them 
+the possibility to choose between computing the sum and computing the product of 1,…,n.-->
+<html>
+<head>
+    <title>User Choose for multiplication or Sum</title>
+</head>
+<body>
+    <script>
+        function calSumOrMul(n, choice) {
+            let result;
+
+            switch (choice) {
+                case "+":  
+                    result = function sumOfNNums(n) {
+                        return (n == 1) ? n : (n + sumOfNNums(n-1));
+                    };
+                    break;
+                case "*":  
+                    result = function mulOfNNums(n) {
+                        return (n == 1) ? n : (n * mulOfNNums(n-1));
+                    };
+                    break;
+                default:  
+                    alert("!! Invalid Choice \ntry again !");
+            }
+            return result(n);
+        }
+
+        let num = +prompt("Enter a number n upto which you want to perform operation : ", 0);
+        let choice = prompt(`Enter + for sum of first ${num} numbers \n And * for product of first  ${num} numbers `, "+");
+        alert(calSumOrMul(num, choice));
+    </script>
+</body>
+</html>

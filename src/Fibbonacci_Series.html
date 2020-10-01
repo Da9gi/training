@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <title>Nth No. in Fibbonacci Series </title>
+    <body>
+        <script>
+            function nthFibboNo(index) {
+                return (index == 0 || index == 1) ? index : (nthFibboNo(index - 1) + (nthFibboNo(index - 2)));
+            }
+
+            index = prompt("Enter the index to calculate fibbonacci by Recursion ", "");
+            alert(nthFibboNo(index));
+        </script>
+        <script>
+            function nthFibboNo(index) {
+                let fn = 1;
+                let f = 0;
+                let temp;
+                if (index == 0 || index == 1) {
+                    return index;
+                }
+                else {
+                    for(let i = 2; i<= index; i++) {
+                        temp = fn;
+                        fn = fn + f;
+                        f = temp;
+                    }
+                    return fn;
+                }
+            }
+
+            index = prompt("Enter the index to calculate fibbonacci by loop ", "");
+            alert(nthFibboNo(index));
+        </script>
+    </body>
+</html>

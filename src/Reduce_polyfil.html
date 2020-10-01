@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!--Polyfil of inbuilt reduce() method of Array in javascript-->
+<html>
+<head>
+    <title>Polyfil of Array reduce()</title>
+</head>
+<body>
+    <script>
+    
+        function newReduce(callback, array, initial = 0) {
+            let result = initial;
+
+            for (let i = 0; i < array.length; i++) {
+                result = callback(result, array[i], i, array);
+            }
+
+        return result;
+        }
+
+        //Below is an example of sum of elements of given array by using above reduce function.
+        function sumOfArray(sum, item) {
+        
+            return sum + item;
+        }
+
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let result = newReduce(sumOfArray, array);
+        alert(`The sum of elements of Array [ ${array} ], is : ${result}`);
+
+    </script>
+</body>
+</html>
