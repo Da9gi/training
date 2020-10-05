@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const SECTRETNUM = 21;
+
+      function guessingGame() {
+        let guessNum = 0;
+        let count = 0;
+        let temp = 0;
+
+        while (guessNum != SECTRETNUM) {
+          temp = guessNum;
+          guessNum = +prompt("Guess the secret number : ", 0);
+
+          if (guessNum > SECTRETNUM + 5) {
+            alert("!!!!   Too Large   !!!!!\nTry again !!!");
+          } else if (guessNum < SECTRETNUM - 5) {
+            alert("!!!!   Too Small   !!!!!\nTry again !!!");
+          } else if (guessNum <= SECTRETNUM + 5 && guessNum > SECTRETNUM) {
+            alert(
+              "!!!!   Large   !!  But a little bit closure   !!!!!\nTry again !!!"
+            );
+          } else if (guessNum >= SECTRETNUM - 5 && guessNum < SECTRETNUM) {
+            alert(
+              "!!!!   Small   !!  But a little bit closure   !!!!!\nTry again !!!"
+            );
+          } else {
+            alert("!! WOW  Congrats !!!\nYou guessed the right number!!");
+          }
+
+          if (temp != guessNum) {
+            count++;
+          }
+        }
+        alert(`You have guessed ${count} Numbers`);
+      }
+
+      guessingGame();
+    </script>
+  </body>
+</html>

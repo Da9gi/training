@@ -14,10 +14,10 @@ console.log(concatArray(arr1, arr2));
 // You can do this quicker than concatenating them followed by a sort.
 
 function concatArraySort(arr3, arr4) {
-  return [...arr3, ...arr4].sort();
+  return [...arr3, ...arr4].sort((a, b) => a - b);
 }
 
-let arr3 = [1, 4, 6];
+let arr3 = [1, 4, 12];
 let arr4 = [2, 3, 5];
 
 console.log(concatArraySort(arr3, arr4));
